@@ -7,6 +7,7 @@
     <meta name="description" content="Start your development with Meyawo landing page.">
     <meta name="author" content="Devcrud">
     <title>Nijas Khan | Mern Stack Developer</title>
+    <link rel="shortcut icon" href="/assets/imgs/logo_1.ico" type="image/x-icon">
     <!-- Toastify-js -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!-- font icons -->
@@ -31,9 +32,9 @@
                 <li class="item">
                     <a class="link" href="#portfolio">Portfolio</a>
                 </li>
-                <li class="item">
+                <!-- <li class="item">
                     <a class="link" href="#testmonial">Testmonial</a>
-                </li>
+                </li> -->
                 <li class="item">
                     <a class="link" href="#contact">Contact</a>
                 </li>
@@ -74,8 +75,12 @@
                     <p class="section-subtitle">Who Am I ?</p>
                     <h2 class="section-title mb-3">About Me</h2>
                     <p>
-                        My name is Nijas khan. I'm a MERN stack developer with experience working on several web applications. I'm passionate about developing scalable and efficient solutions using the latest technologies. I have a strong foundation in JavaScript, Node.js, React, and MongoDB. I'm excited to learn more about this opportunity and how I can contribute to the team. 
-                        I applied for this job because I believe my skills and experience align with the requirements of the position.  I am also looking for opportunities to learn and grow in my career, and I believe this position offers that potential.
+                        My name is Nijas khan. I'm a MERN stack developer with experience working on several web applications. I have a strong foundation in JavaScript, Node.js, React, and MongoDB.
+                        I have extensive experience working as a MERN stack developer, with a strong focus on front-end development using React with Redux state management. Additionally, 
+                        I am highly skilled with numerous JavaScript libraries, such as Ajax, Axios, and jQuery, as well as various plugins like Toastify-js and Sweetalert.
+                        I am also very proficient in using various AWS services such as EC2, S3, and RDS, as well as Nginx and PM2 for web server deployment and management. 
+                        These tools are essential in ensuring the smooth running of web applications, and my experience with them has enabled me to efficiently manage and deploy my applications.
+                        Furthermore, I have experience using Cloudinary and Git tools.
                     </p>
                     <button class="btn-rounded btn btn-outline-primary mt-4" id="download-cv">Download CV</button>
                 </div>
@@ -204,44 +209,44 @@
     </section> <!-- end of section -->
 
     <!-- testimonial section -->
-    <section class="section" id="testmonial">
+    <!-- <section class="section" id="testmonial">
         <div class="container text-center">
             <p class="section-subtitle">What Think Client About Me ?</p>
             <h6 class="section-title mb-6">Testmonial</h6>
 
-            <!-- row -->
+            
             <div class="row">
                 <div class="col-md-6">
                     <div class="testimonial-card">
                         <div class="testimonial-card-img-holder">
-                            <img src="assets/imgs/avatar2.jpg" class="testimonial-card-img"
+                            <img src="assets/imgs/file.jpg" class="testimonial-card-img"
                                 alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
                         </div>
                         <div class="testimonial-card-body">
-                            <p class="testimonial-card-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit. Eaque doloribus autem aperiam earum nostrum omnis blanditiis corporis perspiciatis
-                                adipisci nihil.</p>
-                            <h6 class="testimonial-card-title">Emily Reb</h6>
+                            <p class="testimonial-card-subtitle">I had the pleasure of working with my friend, who is a MERN stack developer, for 7 months. During this time,
+                                Nijas consistently delivered high-quality work and went above and beyond to ensure our projects were successful. His ability to quickly learn is very impressive.
+                                I was impressed by his ability to create full-stack web applications using the MERN stack.</p>
+                            <h6 class="testimonial-card-title">Sooraj VP</h6>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="testimonial-card">
                         <div class="testimonial-card-img-holder">
-                            <img src="assets/imgs/avatar3.jpg" class="testimonial-card-img"
+                            <img src="assets/imgs/akhi.jpg" class="testimonial-card-img"
                                 alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
                         </div>
                         <div class="testimonial-card-body">
-                            <p class="testimonial-card-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit. Eaque doloribus autem aperiam earum nostrum omnis blanditiis corporis perspiciatis
-                                adipisci nihil.</p>
-                            <h6 class="testimonial-card-title">Emily Reb</h6>
+                            <p class="testimonial-card-subtitle">I had the pleasure of working alongside with Nijas khan as a Node.js and React.js developer,
+                                I can say without hesitation that he is an exceptional problem solver. His proficiency in JavaScript and
+                                apply the latest technologies is truly impressive.I highly recommend Nijas to any team looking for a talented and dedicated developer..</p>
+                            <h6 class="testimonial-card-title">Akhila Vijayan</h6>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> <!-- end of container -->
-    </section> <!-- end of testimonial section -->
+        </div>
+    </section> -->
 
     <!-- contact section -->
     <section class="section" id="contact">
@@ -289,47 +294,79 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <!-- contact-from submission -->
+    <!-- JQuery validation plugin -->
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+
+    <!-- validating and submitting form -->
     <script>
-        $("#gform").submit((e)=>{
-            e.preventDefault()
-            $.ajax({
-                url:"https://script.google.com/macros/s/AKfycbyAlFUOxauy2yoqsdw3pL_Ji5oBDIpmh7GrcjgbHsfmpLp6L-mhKzjYbR8YMx-sSPDEOg/exec",
-                data:$("#gform").serialize(),
-                method:"post",
-                success: (response)=>{
-                    Toastify({
-                        text: "Form submitted successfully",
-                        duration: 2000,
-                        className: "info",
-                        gravity: "top", 
-                        position: "center",
-                        style: {
-                            background: "linear-gradient(to right, #695aa6, #6f42c1)",
-                        }
-                    }).showToast();
-                    setTimeout(()=>{
-                        location.reload();
-                    }, 2500);
+        $(document).ready(function() {
+            $("#gform").validate({
+                rules: {
+                  name: {
+                    required: true
+                  },
+                  email: {
+                    required: true,
+                    email: true
+                  },
+                  message: {
+                      required: true
+                  }
                 },
-                error: (err)=>{
-                    console.log(err);
-                    Toastify({
-                        text: "Form is not submitted, error occured",
-                        duration: 3000,
-                        className: "info",
-                        gravity: "top", 
-                        position: "center",
-                        style: {
-                          background: "linear-gradient(to right, #695aa6, #6f42c1)",
-                        }
-                    }).showToast();
-                    setTimeout(()=>{
-                        location.reload();
-                    }, 3000);
+                messages: {
+                  name: {
+                    required: "Please enter your name"
+                  },
+                  email: {
+                    required: "Please enter your email",
+                    email: "Please enter a valid email address"
+                  }
+                },
+                submitHandler: function(form) {
+                  $("#gform").submit((e)=>{
+                      e.preventDefault()
+                      $.ajax({
+                          url: "https://script.google.com/macros/s/AKfycbyAlFUOxauy2yoqsdw3pL_Ji5oBDIpmh7GrcjgbHsfmpLp6L-mhKzjYbR8YMx-sSPDEOg/exec",
+                          data: $("#gform").serialize(),
+                          method: "post",
+                          success: (response)=>{
+                              Toastify({
+                                  text: "Form submitted successfully",
+                                  duration: 2000,
+                                  className: "info",
+                                  gravity: "top", 
+                                  position: "center",
+                                  style: {
+                                      background: "linear-gradient(to right, #695aa6, #6f42c1)",
+                                  }
+                              }).showToast();
+                              setTimeout(()=>{
+                                  location.reload();
+                              }, 2500);
+                          },
+                          error: (err)=>{
+                              console.log(err);
+                              Toastify({
+                                  text: "Form is not submitted, error occured",
+                                  duration: 3000,
+                                  className: "info",
+                                  gravity: "top", 
+                                  position: "center",
+                                  style: {
+                                    background: "linear-gradient(to right, #695aa6, #6f42c1)",
+                                  }
+                              }).showToast();
+                              setTimeout(()=>{
+                                  location.reload();
+                              }, 3000);
+                          }
+                      });
+                  });
+                  return false;
                 }
-            })
-        })
+            });
+        });
+
     </script>
 
     <!-- Toastify-js -->

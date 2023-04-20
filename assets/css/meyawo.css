@@ -12232,3 +12232,10 @@ pre .code {
 .section-lg {
   padding: 100px 0 !important;
 }
+
+label.error {
+  color: red;
+  font-size: 15px;
+  font-weight: normal;
+  margin-top: 5px;
+}
