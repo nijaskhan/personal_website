@@ -22,19 +22,19 @@
             <a class="logo" href="#">Mern Stack Dev</a>
             <ul class="nav">
                 <li class="item">
-                    <a class="link" href="#home">Home</a>
+                    <a class="link" style="cursor: pointer;" onclick="scrollToSection('home')">Home</a>
                 </li>
                 <li class="item">
-                    <a class="link" href="#about">About</a>
+                    <a class="link" style="cursor: pointer;" onclick="scrollToSection('about')">About</a>
                 </li>
                 <li class="item">
-                    <a class="link" href="#portfolio">Portfolio</a>
+                    <a class="link" style="cursor: pointer;" onclick="scrollToSection('portfolio')">Portfolio</a>
                 </li>
                 <!-- <li class="item">
                     <a class="link" href="#testmonial">Testmonial</a>
                 </li> -->
                 <li class="item">
-                    <a class="link" href="#contact">Contact</a>
+                    <a class="link" style="cursor: pointer;" onclick="scrollToSection('contact')">Contact</a>
                 </li>
             </ul>
             <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
@@ -350,6 +350,14 @@
             });
         });
 
+    </script>
+
+    <!-- scroll down to sections -->
+    <script>
+        function scrollToSection(section) {
+            var section = document.getElementById(section);
+            section.scrollIntoView({ behavior: "smooth" });
+        }
     </script>
 
     <!-- Toastify-js -->
