@@ -237,7 +237,7 @@
             <p class="section-subtitle">How can you communicate?</p>
             <h6 class="section-title mb-5">Contact Me</h6>
             <!-- contact form -->
-            <form id="gform" class="contact-form col-md-10 col-lg-8 m-auto">
+            <form id="submitForm" class="contact-form col-md-10 col-lg-8 m-auto">
                 <div class="form-row">
                     <div class="form-group col-sm-6">
                         <input type="text" name="name" size="50" class="form-control" placeholder="Your Name" required>
@@ -283,73 +283,70 @@
     <!-- validating and submitting form -->
     <script>
         $(document).ready(function() {
-            $("#gform").validate({
+            $("#submitForm").validate({
                 rules: {
-                  name: {
-                    required: true
-                  },
-                  email: {
-                    required: true,
-                    email: true
-                  },
-                  message: {
-                      required: true
-                  }
+                    name: {
+                        required: true
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    message: {
+                        required: true
+                    }
                 },
                 messages: {
-                  name: {
-                    required: "Please enter your name"
-                  },
-                  email: {
-                    required: "Please enter your email",
-                    email: "Please enter a valid email address"
-                  }
+                    name: {
+                        required: "Please enter your name"
+                    },
+                    email: {
+                        required: "Please enter your email",
+                        email: "Please enter a valid email address"
+                    }
                 },
                 submitHandler: function(form) {
-                  $("#gform").submit((e)=>{
-                      e.preventDefault()
-                      $.ajax({
-                          url: "https://script.google.com/macros/s/AKfycbyAlFUOxauy2yoqsdw3pL_Ji5oBDIpmh7GrcjgbHsfmpLp6L-mhKzjYbR8YMx-sSPDEOg/exec",
-                          data: $("#gform").serialize(),
-                          method: "post",
-                          success: (response)=>{
-                              Toastify({
-                                  text: "Form submitted successfully",
-                                  duration: 2000,
-                                  className: "info",
-                                  gravity: "top", 
-                                  position: "center",
-                                  style: {
-                                      background: "linear-gradient(to right, #695aa6, #6f42c1)",
-                                  }
-                              }).showToast();
-                              setTimeout(()=>{
-                                  location.reload();
-                              }, 2500);
-                          },
-                          error: (err)=>{
-                              console.log(err);
-                              Toastify({
-                                  text: "Form is not submitted, error occured",
-                                  duration: 3000,
-                                  className: "info",
-                                  gravity: "top", 
-                                  position: "center",
-                                  style: {
+                    console.log("api call");
+                    $.ajax({
+                        url: "https://script.google.com/macros/s/AKfycbyAlFUOxauy2yoqsdw3pL_Ji5oBDIpmh7GrcjgbHsfmpLp6L-mhKzjYbR8YMx-sSPDEOg/exec",
+                        data: $(form).serialize(),
+                        method: "post",
+                        success: () => {
+                            Toastify({
+                                text: "Form submitted successfully",
+                                duration: 2000,
+                                className: "info",
+                                gravity: "top",
+                                position: "center",
+                                style: {
                                     background: "linear-gradient(to right, #695aa6, #6f42c1)",
-                                  }
-                              }).showToast();
-                              setTimeout(()=>{
-                                  location.reload();
-                              }, 3000);
-                          }
-                      });
-                  });
-                  return false;
+                                }
+                            }).showToast();
+                            setTimeout(() => {
+                                location.reload();
+                            }, 2500);
+                        },
+                        error: (err) => {
+                            console.log(err);
+                            Toastify({
+                                text: "Form is not submitted, error occurred",
+                                duration: 3000,
+                                className: "info",
+                                gravity: "top",
+                                position: "center",
+                                style: {
+                                    background: "linear-gradient(to right, #695aa6, #6f42c1)",
+                                }
+                            }).showToast();
+                            setTimeout(() => {
+                                location.reload();
+                            }, 3000);
+                        }
+                    });
+                    return false;
                 }
             });
         });
-
     </script>
 
     <!-- scroll down to sections -->
