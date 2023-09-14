@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!-- font icons -->
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.compat.css" />
     <!-- Bootstrap + Meyawo main styles -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -17,7 +19,7 @@
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
 
     <!-- Page Navbar -->
-    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
+    <nav class="custom-navbar wow fadeInLeft" data-spy="affix" data-offset-top="20">
         <div class="container">
             <a class="logo" href="#">Full Stack Dev</a>
             <ul class="nav">
@@ -46,7 +48,7 @@
     </nav><!-- End of Page Navbar -->
 
     <!-- page header -->
-    <header id="home" class="header">
+    <header id="home" class="header wow fadeInRight">
         <div class="overlay"></div>
         <div class="header-content container">
             <h1 class="header-title">
@@ -66,10 +68,10 @@
         <div class="container text-center">
             <!-- about wrapper -->
             <div class="about">
-                <div class="about-img-holder">
+                <div class="about-img-holder wow bounceInLeft">
                     <img src="assets/imgs/IMG-20230121-WA0026.jpg" class="about-img" alt="portfolio_works">
                 </div>
-                <div class="about-caption">
+                <div class="about-caption wow bounceInRight">
                     <p class="section-subtitle">Who Am I ?</p>
                     <h2 class="section-title mb-1">About Me</h2>
                     <p>
@@ -93,7 +95,7 @@
     </section> <!-- end of about section -->
 
     <!-- service section -->
-    <section class="section" id="service">
+    <section class="section wow fadeInUp" id="service">
         <div class="container text-center">
             <p class="section-subtitle">What I Do ?</p>
             <h6 class="section-title mb-6">Service</h6>
@@ -143,12 +145,12 @@
     </section><!-- end of service section -->
 
     <!-- portfolio section -->
-    <section class="section" id="portfolio">
+    <section class="section wow fadeInUp" id="portfolio">
         <div class="container text-center">
             <p class="section-subtitle">What I Did ?</p>
             <h6 class="section-title mb-6">Portfolio</h6>
             <!-- row -->
-            <div class="row">
+            <div class="row wow fadeInUp">
                 <div class="col-md-4 pb-4">
                     <a href="https://github.com/nijaskhan/Messenger-room" target="_blank" class="portfolio-card">
                         <img class="portfolio-card-img" src="assets/imgs/messagingApp (2).png"
@@ -257,16 +259,16 @@
     </section> <!-- end of portfolio section -->
 
     <!-- section -->
-    <section class="section-sm bg-primary">
+    <section class="section-sm bg-primary wow fadeInUp">
         <!-- container -->
         <div class="container text-center text-sm-left">
             <!-- row -->
             <div class="row align-items-center">
-                <div class="col-sm offset-md-1 mb-4 mb-md-0">
+                <div class="col-sm offset-md-1 mb-4 mb-md-0 wow bounceInLeft">
                     <h6 class="title text-light">Want to work with me?</h6>
                     <p class="m-0 text-light">Always feel Free to Contact & Hire me</p>
                 </div>
-                <div class="col-sm offset-sm-2 offset-md-3">
+                <div class="col-sm offset-sm-2 offset-md-3 wow bounceInRight">
                     <a style="cursor: pointer;" onclick="scrollToSection('contact')"><button
                             class="btn btn-lg my-font btn-light rounded">Hire Me</button></a>
                 </div>
@@ -276,23 +278,23 @@
 
     <!-- contact section -->
     <section class="section" id="contact">
-        <div class="container text-center">
+        <div class="container text-center wow fadeInUp">
             <p class="section-subtitle">How can you communicate?</p>
             <h6 class="section-title mb-5">Contact Me</h6>
             <!-- contact form -->
             <form id="submitForm" class="contact-form col-md-10 col-lg-8 m-auto">
                 <div class="form-row">
-                    <div class="form-group col-sm-6">
+                    <div class="form-group col-sm-6 wow bounceInLeft">
                         <input type="text" name="name" size="50" class="form-control" placeholder="Your Name" required>
                     </div>
-                    <div class="form-group col-sm-6">
+                    <div class="form-group col-sm-6 wow bounceInRight">
                         <input type="email" name="email" class="form-control" placeholder="Enter Email" requried>
                     </div>
-                    <div class="form-group col-sm-12">
+                    <div class="form-group col-sm-12 wow fadeInUp">
                         <textarea name="message" id="comment" rows="6" class="form-control"
                             placeholder="Write Your Message ..." required></textarea>
                     </div>
-                    <div class="form-group col-sm-12 mt-3 d-flex justify-content-center">
+                    <div class="form-group col-sm-12 mt-3 d-flex justify-content-center wow fadeInUp">
                         <input type="submit" value="Send Message" id="showSendMessageBtn"
                             class="btn btn-outline-primary rounded">
                         <button class="btn btn-outline-primary d-none" id="showSendMessageLoadingBtn" type="submit"
@@ -323,7 +325,8 @@
                         class="ti-twitter-alt"></i></a>
             </div>
         </footer>
-    </div> <!-- end of page footer -->
+    </div>
+    <!-- end of page footer -->
 
     <!-- core  -->
     <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
@@ -427,6 +430,18 @@
         button.addEventListener("click", () => {
             window.open("https://drive.google.com/file/d/1oTjPJ6N4c0FyoN8L2VeTKKt-QTRLXSi2/view?usp=share_link", "_blank");
         });
+    </script>
+
+    <!-- wow js -->
+    <script src="/assets/js/wow.min.js"></script>
+    <script>
+        var wow = new WOW(
+            {
+                animateClass: 'animated',
+                offset: 100
+            }
+        );
+        wow.init();
     </script>
 
 </body>
